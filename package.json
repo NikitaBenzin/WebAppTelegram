@@ -6,12 +6,20 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ngrok": "ngrok http http://localhost:3000"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.75.5",
+    "@tanstack/react-query-devtools": "^5.75.5",
+    "@twa-dev/sdk": "^8.0.2",
+    "@twa-dev/types": "^8.0.2",
+    "axios": "^1.9.0",
+    "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.1"
+    "sass": "^1.87.0",
+    "zustand": "^5.0.4"
   },
   "devDependencies": {
     "typescript": "^5",
