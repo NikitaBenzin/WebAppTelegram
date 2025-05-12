@@ -1,4 +1,5 @@
 import { axiosClassic } from '@/api/axios'
+import { IFlowerDto } from '@/types/dto/flower.dto'
 import { IFlower } from '@/types/flower.types'
 
 class FlowerService {
@@ -8,7 +9,7 @@ class FlowerService {
 		return axiosClassic.get<IFlower[]>(`${this._Flower_URL_}/${userId}`)
 	}
 
-	async updateFlower(data: IFlower) {
+	async updateFlower(data: IFlowerDto) {
 		return axiosClassic.put(`${this._Flower_URL_}`, { data })
 	}
 }

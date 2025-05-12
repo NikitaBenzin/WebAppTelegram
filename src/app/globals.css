@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} 
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background-main: #fce7c1;      /* Main background */
+  --text-primary: #5a4e3c;         /* Primary text color */
+  --background-secondary: #fff7ea;/* Secondary background / card bg */
+  --button-primary: #d9a066;      /* Primary button */
+  --button-secondary: #7b9f94;    /* Secondary button */
+  --accent: #d9797c;              /* Accent (rose-like) */
+  --success: #82b366;             /* Success / growth indication */
+  --link-hover: #a86d3c;          /* Link hover or highlight */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme inline {
+  --color-background-main: var(--background-main);      
+  --color-text-primary: var(--text-primary);         
+  --color-background-secondary: var(--background-secondary);
+  --color-button-primary: var(--button-primary);      
+  --color-button-secondary: var(--button-secondary);    
+  --color-accent: var(--accent);              
+  --color-success: var(--success);             
+  --color-link-hover: var(--link-hover);         
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background-main);
+  color: var(--color-text-primary);
+  font-family: "Caveat", cursive;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
