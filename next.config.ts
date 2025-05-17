@@ -2,10 +2,15 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
-	// swcMinify: true,
-	allowedDevOrigins: ['185.70.196.187:8880', '*.185.70.196.187:8880'],
+	allowedDevOrigins: ['flower-rise.uk', '*.flower-rise.uk'],
 	images: {
-		domains: ['api.telegram.org']
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'api.telegram.org',
+				pathname: '**'
+			}
+		]
 	}
 }
 

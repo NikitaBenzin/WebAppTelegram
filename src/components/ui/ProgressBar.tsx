@@ -11,19 +11,19 @@ export function ProgressBar({}: Props) {
 	)
 	return (
 		<>
-			<div className="relative mt-8 max-w-11/12 rounded-full h-6 dark:bg-background-secondary flex">
+			<div className="relative mt-8 w-5/6 rounded-full h-6 bg-background-secondary flex self-center">
 				<div
 					className="bg-success h-6 rounded-full font-bold text-blue-100 text-center p-0.5"
 					style={{ width: `${percents}%` }}
 				>
 					{percents >= 20 ? `${percents}%` : ''}
 				</div>
-				<div className="absolute bottom-0 right-0 translate-x-8 translate-y-3">
+				<div className="absolute bottom-0 right-0 translate-y-3 translate-x-4">
 					<Image
 						alt="Star"
 						src="/star-icon.png"
-						width={55}
-						height={55}
+						width={50}
+						height={50}
 						draggable="false"
 					/>
 				</div>

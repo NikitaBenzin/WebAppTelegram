@@ -35,7 +35,7 @@ export function StartPage() {
 	return (
 		<>
 			{userData ? (
-				<div className="flex flex-col gap-2">
+				<div className="w-full flex flex-col gap-2">
 					<div className="flex flex-col gap-4">
 						{isLoading ? (
 							<MiniLoader />

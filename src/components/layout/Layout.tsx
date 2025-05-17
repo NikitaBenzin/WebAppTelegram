@@ -8,7 +8,7 @@ export function Layout({ children }: PropsWithChildren<unknown>) {
 	return (
 		<>
 			<Header />
-			<main className="p-4">{children}</main>
+			<main className="flex flex-col justify-center items-start p-4 w-full">{children}</main>
 			<Footer />
 		</>
 	)
