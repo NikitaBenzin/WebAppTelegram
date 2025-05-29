@@ -1,33 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background-main: #fce7c1;      /* Main background */
-  --text-primary: #5a4e3c;         /* Primary text color */
-  --background-secondary: #fff7ea;/* Secondary background / card bg */
-  --button-primary: #d9a066;      /* Primary button */
-  --button-secondary: #7b9f94;    /* Secondary button */
-  --accent: #d9797c;              /* Accent (rose-like) */
-  --success: #82b366;             /* Success / growth indication */
-  --link-hover: #a86d3c;          /* Link hover or highlight */
+  /* Основные цвета */
+  --primary: #8cc8a1;       /* Нежный мятный */
+  --secondary: #ffd78a;     /* Светлый абрикосовый */
+  --accent: #ffb6b9;        /* Нежно-розовый */
+
+  /* Фон и поверхности */
+  --background: #f5faff;    /* Очень светлый голубовато-белый */
+  --surface: #ffffff;       /* Белый для карточек и элементов */
+
+  /* Текст */
+  --text-primary: #3a3a3a;  /* Тёмно-серый для основного текста */
+  --text-secondary: #7a7a7a;/* Серый для второстепенного текста */
+
+  /* Уведомления / статусы */
+  --success: #a6e3b0;       /* Светло-зелёный */
+  --warning: #ffe48a;       /* Мягкий жёлтый */
+  --error: #ff9999;         /* Светло-красный */
+
+  /* Границы и элементы */
+  --border: #dcdcdc;        /* Светло-серый */
+  --shadow: rgba(0, 0, 0, 0.05); /* Лёгкая тень */
 }
 
 @theme inline {
-  --color-background-main: var(--background-main);      
-  --color-text-primary: var(--text-primary);         
-  --color-background-secondary: var(--background-secondary);
-  --color-button-primary: var(--button-primary);      
-  --color-button-secondary: var(--button-secondary);    
-  --color-accent: var(--accent);              
-  --color-success: var(--success);             
-  --color-link-hover: var(--link-hover);         
+  --color-primary: var(--primary)
+  --color-secondary: var(--secondary)
+  --color-accent: var(--accent)
+  --color-background: var(--background)
+  --color-surface: var(--surface)
+  --color-text-primary: var(--text-primary)
+  --color-text-secondary: var(--text-secondary)
+  --color-success: var(--success)
+  --color-warning: var(--warning)
+  --color-error: var(--error)
+  --color-border: var(--border)
+  --color-shadow: var(--shadow)
 }
 
 body {
-  background: var(--color-background-main);
+  background: var(--color-background);
   color: var(--color-text-primary);
-  font-family: "Caveat", cursive;
   min-height: 100vh;
   margin: 0;
+}
+
+#layout { 
   display: flex;
   flex-direction: column;
 }

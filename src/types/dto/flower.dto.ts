@@ -1,4 +1,4 @@
-export interface IFlowerDto {
+export interface IPetDto {
 	id: string
 	name: string
 }

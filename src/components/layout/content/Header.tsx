@@ -1,5 +1,4 @@
-import { PAGE } from '@/config/public-page.config'
-import { useFlowerNameStore } from '@/store/flowerName.store'
+import { PUBLIC_PAGE } from '@/config/public-page.config'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -7,22 +6,15 @@ import { usePathname } from 'next/navigation'
 interface Props {}
 
 export function Header({}: Props) {
-	const flowerName = useFlowerNameStore(state => state.name)
-
 	const pathname = usePathname()
 	return (
-		<header className="text-center p-4 bg-background-secondary">
-			{pathname === '/' ? (
-				<h1 className="text-4xl font-bold">Choose flower</h1>
-			) : (
+		<header className="text-center p-4">
+			{pathname === PUBLIC_PAGE.HOME ? (
+				// <h1 className="text-4xl font-bold">Choose flower</h1>
 				<nav>
-					<ul className="grid grid-cols-[auto_1fr_auto] items-center">
+					<ul className="flex justify-between items-center">
 						<li className="self-start w-fit">
-							<Link
-								href={
-									pathname.includes(PAGE.SETTINGS) ? PAGE.FLOWER : PAGE.HOME
-								}
-							>
+							{/* <button className="w-fit hover:scale-105 transition-all duration-300 cursor-pointer">
 								<Image
 									alt="Back arrow"
 									src="/arrow-icon.png"
@@ -31,22 +23,41 @@ export function Header({}: Props) {
 									className="rotate-180"
 									draggable="false"
 								/>
-							</Link>
+							</button> */}
 						</li>
-						<li>
-							<h1 className="text-4xl font-bold">
-								{Number(flowerName?.length) > 10
-									? flowerName?.slice(0, 10)
-									: flowerName}
-							</h1>
-						</li>
-						<li className="justify-self-end">
-							<Link href={PAGE.SETTINGS}>
+						<li className="flex gap-4">
+							<button className="w-fit hover:scale-105 transition-all duration-300 cursor-pointer">
 								<Image
-									alt="Settings"
-									src="/settings-icon.png"
+									alt="FAQ"
+									src="/faq.png"
 									width={45}
 									height={45}
+									draggable="false"
+								/>
+							</button>
+							<button className="w-fit hover:scale-105 transition-all duration-300 cursor-pointer">
+								<Image
+									alt="Info"
+									src="/info.png"
+									width={45}
+									height={45}
+									draggable="false"
+								/>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			) : (
+				<nav>
+					<ul className="grid grid-cols-[auto_1fr_auto] items-center">
+						<li className="self-start w-fit">
+							<Link href={PUBLIC_PAGE.HOME}>
+								<Image
+									alt="Back arrow"
+									src="/arrow-icon.png"
+									width={45}
+									height={45}
+									className="rotate-180"
 									draggable="false"
 								/>
 							</Link>

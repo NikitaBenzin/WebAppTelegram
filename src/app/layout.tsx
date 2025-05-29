@@ -1,6 +1,6 @@
 import { QueryClient } from '@tanstack/react-query'
 import type { Metadata } from 'next'
-import { Caveat, Geist } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import Script from 'next/script'
 
 import { Layout } from '@/components/layout/Layout'
@@ -10,11 +10,6 @@ import './globals.css'
 const geistSans = Geist({
 	variable: '--font-geist-sans',
 	subsets: ['latin']
-})
-
-const caveat = Caveat({
-	variable: '--font-caveat',
-	subsets: ['latin', 'cyrillic']
 })
 
 export const metadata: Metadata = {
@@ -37,7 +32,7 @@ export default function RootLayout({
 					strategy="lazyOnload"
 				/>
 			</head>
-			<body className={`${caveat.variable} antialiased`}>
+			<body className={`${geistSans.variable} antialiased`}>
 				<QueryProvider>
 					<Layout>{children}</Layout>
 				</QueryProvider>

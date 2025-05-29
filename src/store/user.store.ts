@@ -1,17 +1,17 @@
-import { UserData } from '@/types/userData.types'
+import { IUser } from '@/types/user.types'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 interface IUserStore {
-	user: UserData | null
-	setUser: (user: UserData) => void
+	user: IUser | null
+	setUser: (user: IUser) => void
 }
 
 export const useUserStore = create<IUserStore>()(
 	persist(
 		set => ({
 			user: null,
-			setUser: (user: UserData) => set(() => ({ user }))
+			setUser: (user: IUser) => set(() => ({ user }))
 		}),
 		{ name: 'user-storage' }
 	)
